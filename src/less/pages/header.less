@@ -1,0 +1,303 @@
+.header {
+	height: 100vh;
+	background: url('../../img/cafe-top.jpg') no-repeat 50%;
+	background-size: cover;
+	position: relative;
+
+	&-top {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+	&-body {
+		margin-top: 110px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__tel {
+		font-size: .7em;
+	}
+
+	&-sozial {
+		padding: 5px 0;
+		background: rgba(12,78,164,.7);
+
+		.list {
+			margin-left: 20px;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		&__icon {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			height: 25px;
+			width: 25px;
+			color: @c-blue;
+			background: rgba(255,255,255, .7);
+			border-radius: 50%;
+			transition: all .3s;
+
+			&:hover {
+				background: transparent;
+				color: @c-white;
+			}
+		}
+	}
+
+	&-nav {
+		background: rgba(255,255,255,.9);
+		
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+
+			&:after,
+			&:before {
+				display: none;
+			}
+		}
+
+		nav {
+			align-self: stretch;
+			display: flex;	
+			position: relative;		
+		}
+	}
+}
+
+.filter {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(12,78,164, .5);
+}
+
+.link {
+	transition: all .3s;
+	&:hover {
+		text-decoration: none;
+	}
+
+	&_light {
+		color: @c-white;
+
+		&:hover {
+			color: lighten(@c-blue,30%);
+		}
+	} 
+
+	&_dark {
+		color: @c-blue;
+
+		&:focus {
+			color: @c-blue;
+		}
+
+		&:hover {
+			color: @c-blue;
+		}
+
+		position: relative;
+		display: block;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 5px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -10px;
+			right: 0;
+			height: 0;
+			margin: auto 0;
+			background: @c-blue;
+			transition: all .4s;
+		}
+
+		&:hover {
+			&:before {
+				height: 100%;
+			}	
+		}
+	}
+
+	&_caret {
+			position: relative;
+			vertical-align: middle;
+			&:after {
+				content:"";
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				right: -15px;
+				margin-top: -3px;
+				border: 5px solid transparent;
+				border-top: 7px solid @c-blue;
+			}
+		}
+}
+
+.list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	&__item {
+		margin: 0 10px;
+
+		&_parent {
+			position: relative;
+		}
+	}
+
+	&_column {
+		flex-direction: column;
+
+		.list__item {
+			margin: 10px;
+		}
+	}
+}
+
+.menu {
+	position: relative;
+
+	&__item {
+		margin: 0 20px;
+	}
+
+	&__sub {
+		position: absolute;
+		top: 100%;
+		display: none;
+		background: rgba(255,255,255,.9);
+	}
+}
+
+.logo {
+	display: flex;
+	width: 200px;
+	height: 70px;
+
+	&__img {
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+	}
+}
+
+.line() {
+	height: 3px;
+	width: 30px;
+	background: @c-blue;
+	position: absolute;
+}
+
+.hamburger {
+
+	.line;	
+	right: 0;
+	cursor: pointer;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+	
+	&:after {
+		.line;
+		content: '';
+		display: inline-block;
+		bottom: 8px;
+	}
+
+	&:before {
+		.line;
+		content: '';
+		top: 8px;
+	}
+}
+
+.form {
+	width: 300px;
+	background: rgba(255,255,255, .8);
+	padding: 15px;
+	color: @c-blue;
+	border-top: 10px solid @c-blue;
+
+	textarea {
+		resize: none;
+	}
+
+	&__btn {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+.input {
+	padding: 5px;
+	display: block;
+	width: 100%;
+	margin-bottom: 30px;
+	border: 2px solid @c-blue;
+	border-radius: 5px;
+	background-color: transparent;
+	&-field {
+		position: relative;
+
+		label {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			margin: auto 0;
+			font-size: .9em;
+			opacity: .8;
+			display: flex;
+			align-items: center;
+			transition: all .3s;
+			pointer-events: none;
+		}
+
+		.input:focus ~ label{
+
+				top: -130%;
+				font-size: .6em;
+		}
+	}
+}
+
+.btn {
+	color: @c-white;
+	background: @c-blue;
+	border: none;
+	padding: 5px 40px;
+	text-transform: uppercase;
+	border-radius: 5px;
+	transition: all .3s;
+	&:hover {
+		background: rgba(255,255,255,.5);
+		color: @c-blue;
+	}
+}

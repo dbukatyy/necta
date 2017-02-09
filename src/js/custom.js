@@ -1,8 +1,13 @@
 jQuery(document).ready(function () {
 
     
+    // menu
+    $('.link_caret').on('click', function (e) {
+        e.preventDefault();
 
-
+        $(this).siblings('.menu__sub').slideToggle();
+        return false;
+    });
 
 
 

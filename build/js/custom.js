@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){$(".link_caret").on("click",function(e){return e.preventDefault(),$(this).siblings(".menu__sub").slideToggle(),!1})});
