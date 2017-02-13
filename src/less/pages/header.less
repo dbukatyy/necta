@@ -1,6 +1,6 @@
 .header {
 	height: 100vh;
-	background: url('../../img/cafe-top.jpg') no-repeat 50%;
+	background: url('../img/cafe-top.jpg') no-repeat 50%;
 	background-size: cover;
 	position: relative;
 
@@ -10,11 +10,26 @@
 		right: 0;
 	}
 
-	&-body {
-		margin-top: 110px;
+	&__body {
+		padding-top: 110px;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+	}
+
+	&__slogan {
+		max-width: 70%;
+		min-width: 60%;
+		font-size: 3em;
+		font-weight: bold;
+		color: @c-white;
 	}
 
 	&__tel {
@@ -79,12 +94,13 @@
 }
 
 .filter {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	// position: absolute;
+	// top: 0;
+	// bottom: 0;
+	// left: 0;
+	// right: 0;
 	background: rgba(12,78,164, .5);
+	min-height: 100vh;
 }
 
 .link {
@@ -165,13 +181,29 @@
 	&__item {
 		margin: 0 10px;
 
-		&_parent {
-			position: relative;
+		&_iconed {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			i {
+				margin-right: 20px;
+				width: 20%;
+				display: flex;
+				align-items: center;
+			}
+			
+			p {
+				width: 75%;
+				margin: 0;
+			}
 		}
 	}
 
 	&_column {
 		flex-direction: column;
+		align-items: stretch;
 
 		.list__item {
 			margin: 10px;
@@ -253,6 +285,10 @@
 		width: 90%;
 		margin: 0 auto;
 	}
+
+	&__txt {
+		text-align: center;
+	}
 }
 
 .input {
@@ -291,7 +327,7 @@
 .btn {
 	color: @c-white;
 	background: @c-blue;
-	border: none;
+	border: 2px solid @c-blue;
 	padding: 5px 40px;
 	text-transform: uppercase;
 	border-radius: 5px;
@@ -300,4 +336,8 @@
 		background: rgba(255,255,255,.5);
 		color: @c-blue;
 	}
+}
+
+.txt-right {
+	text-align: right;
 }
