@@ -4,6 +4,8 @@ body {
 	font-size: 18px;
 	position: relative;
 	padding-bottom: 80px;
+	background: @c-white;
+	font-family: 'Comfortaa', cursive;
 }
 
 .section {
@@ -54,6 +56,63 @@ body {
 
 		.list__item {
 			margin: 30px 0;
+		}
+	}
+}
+
+// catalogs
+.catalogs {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.catalog {
+	display: block;
+	position: relative;
+	width: 31%;
+	height: 290px;
+	overflow: hidden;
+	margin: 10px;
+	// flex-basis: 290px;
+	min-width: 290px;
+
+	&__info {
+		position: absolute;
+		padding: 10px;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background: linear-gradient(to bottom, darken(@c-blue,15%) 0%, darken(@c-blue,15%) 50%, @c-white 50%, @c-white 100%);
+		background-size: 100% 200%;
+		background-position-y: 0;
+		color: @c-white;
+		font-weight: bold;
+		transition: all .3s;
+
+		p {
+			padding-top: 60px;
+			&:before {
+				display: block;
+				position: absolute;
+				top: 60px;
+				left: 0;
+				right: 0;
+				font-size: 2em;
+			}
+		}
+
+		&:hover {
+			background-position-y: 100%;
+			color: darken(@c-blue,15%);
 		}
 	}
 }
@@ -126,7 +185,8 @@ body {
 			position: absolute;
 			right: 10px;
 			top: 20%;
-			padding: 5px 15px;
+			padding: 5px 10px;
+			font-size: .9em;
 		}
 	}
 
@@ -157,8 +217,18 @@ body {
 	&__name {
 		position: relative;
 		padding: 0 10px;
+	}
 
-		
+	&__price {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		padding: 3px;
+		border-radius: 3px;
+		margin: 0;
+		font-size: .8em;
+		color: @c-white;
+		background: rgba(12,78,164, .6);
 	}
 
 	&:hover {
@@ -223,6 +293,7 @@ body {
 	background: @c-white;
 	color: @c-blue;
 	font-weight: 600;
+	font-size: .8em;
 	.container {
 		display: flex;
 		flex-wrap: wrap;
@@ -233,5 +304,9 @@ body {
 		&:before {
 			display: none;
 		}
+	}
+
+	p {
+		margin-right: 20px;
 	}
 } 	

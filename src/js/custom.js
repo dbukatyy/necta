@@ -9,6 +9,12 @@ jQuery(document).ready(function () {
         return false;
     });
 
+    $('.hamburger').on('click', function (e) {
+
+        $(this).toggleClass('hamburger_active');
+        $('.mob-menu').toggleClass('mob-menu_active');
+    });
+
 
 
 

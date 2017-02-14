@@ -1,0 +1,63 @@
+.necta {
+	background: @c-white;
+
+	&-span {
+		color: @c-blue;
+	}
+}
+
+.article {
+	&__title {
+		font-size: 1.3em;
+		padding: 10px 0;
+
+		&:before {
+			font-size: 2em;
+			vertical-align: middle;
+			margin-right: 20px;
+		}
+
+		&_err {
+			color: rgba(255,0,0,.7);
+			// border-bottom: 2px solid rgba(255,0,0,.5);
+
+			&:before {
+				transform: rotate(180deg);
+			}
+		}
+
+		&_succes {
+			color: rgb(68,211,25);
+		}
+	}
+
+	&__item {
+		span {
+			font-size: 1.1em;
+			line-height: 2em;
+			padding: 10px 0;
+			border-bottom: 2px solid rgba(255,0,0,.5);
+			&:before {
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+		}
+		&_err {
+			span {
+				&:before {
+					color: rgba(255,0,0,.7);
+				}
+			}
+		}
+
+		&_succes {
+			span {
+				border-bottom: 2px solid rgb(68,211,25);
+				text-transform: uppercase;
+				&:before {
+					color: rgb(68,211,25);
+				}
+			}
+		}
+	}
+}

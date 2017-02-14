@@ -2,6 +2,7 @@
 	height: 100vh;
 	background: url('../img/cafe-top.jpg') no-repeat 50%;
 	background-size: cover;
+	background-attachment: fixed;
 	position: relative;
 
 	&-top {
@@ -16,7 +17,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		height: 100%;
+		height: 100vh;
 
 		&:after,
 		&:before {
@@ -189,6 +190,7 @@
 
 			i {
 				margin-right: 20px;
+				margin-bottom: 10px;
 				width: 20%;
 				display: flex;
 				align-items: center;
@@ -223,6 +225,7 @@
 		top: 100%;
 		display: none;
 		background: rgba(255,255,255,.9);
+		font-size: .8em;
 	}
 }
 
@@ -248,29 +251,48 @@
 .hamburger {
 
 	.line;	
-	right: 0;
+	right: 10px;
 	cursor: pointer;
 	top: 0;
 	bottom: 0;
 	margin: auto;
 	display: none;
+	transition: all .3s;
+
 	
 	&:after {
 		.line;
 		content: '';
 		display: inline-block;
-		bottom: 8px;
+		bottom: 7px;
 	}
 
 	&:before {
 		.line;
 		content: '';
-		top: 8px;
+		top: 7px;
+	}
+
+	&_active {
+		background: transparent;
+		z-index: 100;
+
+		&:after {
+			bottom: 0;
+			transform: rotate(45deg);
+			background: @c-white;
+		}
+
+		&:before {
+			top: 0;
+			transform: rotate(-45deg);
+			background: @c-white;
+		}
 	}
 }
 
 .form {
-	width: 300px;
+	width: 290px;
 	background: rgba(255,255,255, .8);
 	padding: 15px;
 	color: @c-blue;
@@ -340,4 +362,47 @@
 
 .txt-right {
 	text-align: right;
+}
+
+.mob-menu {
+	background: rgba(12,78,164, .9);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0);
+	transition: all .4s;
+
+	.link_dark {
+		color: @c-white;
+		font-size: 1.5em;
+
+		&:before {
+			background: @c-white;
+		}
+	}
+
+	.link_caret:after {
+		border-top: 7px solid @c-white;	
+	}
+
+	.menu__item {
+		position: static;
+	}
+
+	.menu__sub {
+		position: static;
+		background: transparent;
+		.link_dark {
+			font-size: 1em;
+		}
+	}
+
+	&_active {
+		transform: scale(1);
+	}
 }

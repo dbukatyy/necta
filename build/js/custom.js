@@ -1,1 +1,1 @@
-jQuery(document).ready(function(){$(".link_caret").on("click",function(e){return e.preventDefault(),$(this).siblings(".menu__sub").slideToggle(),!1})});
+jQuery(document).ready(function(){$(".link_caret").on("click",function(e){return e.preventDefault(),$(this).siblings(".menu__sub").slideToggle(),!1}),$(".hamburger").on("click",function(e){$(this).toggleClass("hamburger_active"),$(".mob-menu").toggleClass("mob-menu_active")})});
