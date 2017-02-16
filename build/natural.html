@@ -2,23 +2,134 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Products</title>
+	<title>Natural</title>
 	<meta name="keywords" content="Test" />
 	<meta name="description" content="Test">
 	<meta name="author" content="ittech"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-	//= template/head.html
+	<link href="https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+	
+	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- Js -->
+	<!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script> -->
+	<!-- <script src="js/jquery.min.js"></script> -->
 </head>
 <body>
-	//= template/header.html
+	<header class="header">
+		<div class="filter">
+			<section class="header-top">
+				<div class="header-sozial">
+					<div class="container"> 
+						<a class="header__tel link link_light" href="tel:+375296223957">Звоните +375 (29) 622 39 57</a>
+						<ul class="list">
+							<li class="list__item">
+								<a href="" class="link"><i class="header-sozial__icon icon-insta"></i></a>
+							</li>
+							<li class="list__item">
+								<a href="" class="link"><i class="header-sozial__icon icon-fb"></i></a>
+							</li>
+							<li class="list__item">
+								<a href="" class="link"><i class="header-sozial__icon icon-vk"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div><!--header-sozial-->
+				<div class="header-nav">
+					<div class="container">
+						<a class="logo" href="">
+							<img class="logo__img" src="img/necta.png" alt="necta">
+						</a>
+						<nav>
+							<ul class="list menu">
+								<li class="list__item menu__item">
+									<a class="link link_dark menu__link" href="../index.html">Главная</a>
+								</li>
+								<li class="list__item menu__item">
+									<a class="link link_dark link_caret menu__link" href="">Каталог</a>
+									<ul class="menu__sub list list_column">
+										<li class="list__item"><a class="link link_dark" href="../natural.html">Кофейные автоматы, приготавливающие кофе из натуральных зерен</a></li>
+										<li class="list__item"><a class="link link_dark" href="../horeca.html">Кофейные автоматы, HO. RE. CA.</a></li>
+										<li class="list__item"><a class="link link_dark" href="../snek.html">Снековые автоматы</a></li>
+									</ul>
+								</li>
+								<li class="list__item menu__item">
+									<a class="link link_dark menu__link" href="../about.html">О Necta</a>
+								</li>
+								<li class="list__item menu__item">
+									<a class="link link_dark menu__link" href="../contacts.html">Контакты</a>
+								</li>
+							</ul>
+							<div class="hamburger "></div>
+						</nav>
+					</div>
+				</div><!--header-nav-->
+			</section><!--header-top-->
+	
+			<section class="container header__body">
+	
+				<form action="contact.php" class="form" name="order" id="order">
+					<p class="form__txt">
+						Стань счастливым владельцем Necta <span>прямо сейчас</span> и получи скидку 5%
+					</p>
+					<p class="error">Пожалуйста, заполните все поля.</p>
+					<div class="input-field">
+						<input type="text" class="input" name="name" id="name">
+						<label for="name">Ваше имя</label>
+					</div>
+					<div class="input-field">
+						<input type="tel" class="input" name="tel" id="tel">
+						<label for="tel">Ваш телефон</label>
+					</div>
+					<div class="input-field">
+						<textarea class="input" name="message" id="message"></textarea>
+						<label for="message">Модель или пожелание</label>
+					</div>
+					<input type="submit" class="btn form__btn" value="Заказать">
+				</form>
+	
+				<div class="header__slogan">
+					<p class="txt-left animated fadeIn">Вкусный кофе</p>
+					<p class="txt-right animated fadeIn">- это Necta</p>
+				</div>
+					
+				
+			</section>
+		</div>
+	</header><!--header-->
+	
+	<div class="mob-menu">
+		<nav>
+			<ul class="list list_column menu">
+				<li class="list__item menu__item">
+					<a class="link link_dark menu__link" href="">Главная</a>
+				</li>
+				<li class="list__item menu__item">
+					<a class="link link_dark link_caret menu__link" href="">Каталог</a>
+					<ul class="menu__sub list list_column">
+						<li class="list__item"><a class="link link_dark" href="">Кофейные автоматы, приготавливающие кофе из натуральных зерен</a></li>
+						<li class="list__item"><a class="link link_dark" href="">Кофейные автоматы, HO. RE. CA.</a></li>
+						<li class="list__item"><a class="link link_dark" href="">Снековые автоматы</a></li>
+					</ul>
+				</li>
+				<li class="list__item menu__item">
+					<a class="link link_dark menu__link" href="">О Necta</a>
+				</li>
+				<li class="list__item menu__item">
+					<a class="link link_dark menu__link" href="">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 		<section class="section pop-model">
 		<div class="container">
 			<h2 class="section__title">Кофейные автоматы, приготавливающие кофе из натуральных зерен</h2>
 			<div class="cards">
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/BrioUp_Necta.png" alt="BrioUp_Necta">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -47,7 +158,7 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/canto.png" alt="canto">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -75,7 +186,7 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/Canto_Touch.png" alt="Canto_Touch">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -103,7 +214,7 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/colibri.png" alt="colibri">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -131,7 +242,7 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/concerto.png" alt="concerto">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -160,7 +271,7 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/kikkiMax.png" alt="kikkiMax">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -188,7 +299,7 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/kikkoes6.png" alt="kikkoes6">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -216,7 +327,35 @@
 				</a>
 				<a href="" class="card">
 					<div class="card__img">
-						<img src="img/card.jpg" alt="">
+						<img src="img/natur/opera.png" alt="opera">
+					</div>
+					<div class="card__info">
+						<ul>
+							<li>Выборов напитков —20</li>
+							<li>Контейнеров под ингредиенты —8</li>
+							<li>Стаканы —650 шт.</li>
+							<li>Размешиватели —1000 шт.</li>
+							<li>Регулировка сахара —5 дозировок</li>
+							<li>Габариты —1830x650x740мм (ВxШxГ)</li>
+							<li>Вес —170 кг</li>
+							<li>Электропитание —220В/50Гц</li>
+							<li>Макс. энергопотребление —1830 Вт</li>
+							<li>Дисплей —цветной</li>
+							<li>2 вида зернового кофе – 5400</li>
+							<li>Большой и стандартный стакан – 5900</li>
+							<li>Сатуратор, холодные напитки – (опция)</li>
+							<li>Дисплей —однострочный монохромный</li>
+							<li>Подставка с местом под монетник – 360</li>
+						</ul>
+					</div>
+					<div class="card__txt">
+						<p class="card__name">Samba classic</p>
+						<span class="btn" href="">заказать</span>
+					</div>
+				</a>
+				<a href="" class="card">
+					<div class="card__img">
+						<img src="img/natur/solista.png" alt="solista">
 					</div>
 					<div class="card__info">
 						<ul>
@@ -245,7 +384,38 @@
 			</div><!--cards-->
 		</div>
 	</section>
-	//= template/footer.html
-	//= template/foot.html
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2017 Гровенда-сервис. Все права защищены</p>
+			<a href="">Digital studio IT Tech. Group</a>
+		</div>
+	</footer>
+	
+	<div class="to-top icon-top"></div>
+	
+	<div class="form-alert">
+		<form action="../contact.php" class="form" name="order" id="order">
+			<p class="form__txt">
+				Стань счастливым владельцем Necta <span>прямо сейчас</span> и получи скидку 5%
+			</p>
+			<p class="error">Пожалуйста, заполните все поля.</p>
+			<div class="input-field">
+				<input type="text" class="input" name="name" id="name">
+				<label for="name">Ваше имя</label>
+			</div>
+			<div class="input-field">
+				<input type="tel" class="input" name="tel" id="tel">
+				<label for="tel">Ваш телефон</label>
+			</div>
+			<div class="input-field">
+				<textarea class="input" name="message" id="mesage"></textarea>
+				<label for="message">Модель или пожелание</label>
+			</div>
+			<input type="submit" class="btn form__btn" value="Заказать">
+		</form>
+		<p class="msg"></p>
+	</div>
+	<script src="js/vendor.js"></script>
+	<script src="js/custom.js"></script>
 </body>
 </html>

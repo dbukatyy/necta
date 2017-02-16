@@ -7,13 +7,12 @@
 	<meta name="description" content="Test">
 	<meta name="author" content="ittech"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa&amp;subset=cyrillic-ext" rel="stylesheet">
-
 	
+
+	<link href="https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
 	
 	<link rel="stylesheet" href="css/vendor.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
 	
 	<!-- Js -->
 	<!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script> -->
@@ -47,21 +46,21 @@
 						<nav>
 							<ul class="list menu">
 								<li class="list__item menu__item">
-									<a class="link link_dark menu__link" href="">Главная</a>
+									<a class="link link_dark menu__link" href="../index.html">Главная</a>
 								</li>
 								<li class="list__item menu__item">
 									<a class="link link_dark link_caret menu__link" href="">Каталог</a>
 									<ul class="menu__sub list list_column">
-										<li class="list__item"><a class="link link_dark" href="">Кофейные автоматы, приготавливающие кофе из натуральных зерен</a></li>
-										<li class="list__item"><a class="link link_dark" href="">Кофейные автоматы, HO. RE. CA.</a></li>
-										<li class="list__item"><a class="link link_dark" href="">Снековые автоматы</a></li>
+										<li class="list__item"><a class="link link_dark" href="../natural.html">Кофейные автоматы, приготавливающие кофе из натуральных зерен</a></li>
+										<li class="list__item"><a class="link link_dark" href="../horeca.html">Кофейные автоматы, HO. RE. CA.</a></li>
+										<li class="list__item"><a class="link link_dark" href="../snek.html">Снековые автоматы</a></li>
 									</ul>
 								</li>
 								<li class="list__item menu__item">
-									<a class="link link_dark menu__link" href="">О Necta</a>
+									<a class="link link_dark menu__link" href="../about.html">О Necta</a>
 								</li>
 								<li class="list__item menu__item">
-									<a class="link link_dark menu__link" href="">Контакты</a>
+									<a class="link link_dark menu__link" href="../contacts.html">Контакты</a>
 								</li>
 							</ul>
 							<div class="hamburger "></div>
@@ -72,10 +71,11 @@
 	
 			<section class="container header__body">
 	
-				<form action="" class="form" name="order" id="order">
+				<form action="contact.php" class="form" name="order" id="order">
 					<p class="form__txt">
 						Стань счастливым владельцем Necta <span>прямо сейчас</span> и получи скидку 5%
 					</p>
+					<p class="error">Пожалуйста, заполните все поля.</p>
 					<div class="input-field">
 						<input type="text" class="input" name="name" id="name">
 						<label for="name">Ваше имя</label>
@@ -85,15 +85,15 @@
 						<label for="tel">Ваш телефон</label>
 					</div>
 					<div class="input-field">
-						<textarea class="input" name="message" id="mesage"></textarea>
+						<textarea class="input" name="message" id="message"></textarea>
 						<label for="message">Модель или пожелание</label>
 					</div>
 					<input type="submit" class="btn form__btn" value="Заказать">
 				</form>
 	
 				<div class="header__slogan">
-					<p>Вкусный кофе</p>
-					<p class="txt-right">- это Necta</p>
+					<p class="txt-left animated fadeIn">Вкусный кофе</p>
+					<p class="txt-right animated fadeIn">- это Necta</p>
 				</div>
 					
 				
@@ -136,15 +136,15 @@
 
 				<div class="how-work__list">
 					<ul class="list list_column">
-						<li class="list__item list__item_iconed">
+						<li class="list__item list__item_iconed animated">
 							<i class="icon-coffe"></i>
 							<p>Всегда свежий кофе из натуральных зёрен</p>
 						</li>
-						<li class="list__item list__item_iconed">
+						<li class="list__item list__item_iconed animated">
 							<i class="icon-barista"></i>
 							<p>Ваш личный бариста готовый приготовить любой кофе на Ваш вкус</p>
 						</li>
-						<li class="list__item list__item_iconed">
+						<li class="list__item list__item_iconed animated">
 							<i class="icon-fix3"></i>
 							<p>Лёгкость в обслуживании</p>
 						</li>
@@ -162,17 +162,17 @@
 			<div class="catalogs__list">
 				<a href="" class="catalog">
 					<div class="catalog__info">
-						<p class="icon-cup">Кофейные автоматы, приготавливающие кофе из натуральных зерен</p>
+						<p class="icon-cup"><span class="catalog__name">Кофейные автоматы, приготавливающие кофе из натуральных зерен</span></p>
 					</div>
 				</a>
 				<a href="" class="catalog">
 					<div class="catalog__info">
-						<p class="icon-cup">Снековые автоматы</p>
+						<p class="icon-cup"><span class="catalog__name">Снековые автоматы</span></p>
 					</div>
 				</a>
 				<a href="" class="catalog">
 					<div class="catalog__info">
-						<p class="icon-cup">Кофейные автоматы, HO. RE. CA.</p>
+						<p class="icon-cup"><span class="catalog__name">Кофейные автоматы, HO. RE. CA.</span></p>
 					</div>
 				</a>
 			</div>	
@@ -313,7 +313,7 @@
 				<p>Лишь истинные целители выбирают <span> Necta </span></p>
 			</div>
 			<div class="facts__form">
-			<form action="" class="form" name="order" id="order">
+			<form action="../contact.php" class="form" name="order" id="order">
 				<p class="form__txt">
 					Стань счастливым владельцем Necta <span>прямо сейчас</span> и получи скидку 5%
 				</p>
@@ -341,6 +341,31 @@
 			<a href="">Digital studio IT Tech. Group</a>
 		</div>
 	</footer>
+	
+	<div class="to-top icon-top"></div>
+	
+	<div class="form-alert">
+		<form action="../contact.php" class="form" name="order" id="order">
+			<p class="form__txt">
+				Стань счастливым владельцем Necta <span>прямо сейчас</span> и получи скидку 5%
+			</p>
+			<p class="error">Пожалуйста, заполните все поля.</p>
+			<div class="input-field">
+				<input type="text" class="input" name="name" id="name">
+				<label for="name">Ваше имя</label>
+			</div>
+			<div class="input-field">
+				<input type="tel" class="input" name="tel" id="tel">
+				<label for="tel">Ваш телефон</label>
+			</div>
+			<div class="input-field">
+				<textarea class="input" name="message" id="mesage"></textarea>
+				<label for="message">Модель или пожелание</label>
+			</div>
+			<input type="submit" class="btn form__btn" value="Заказать">
+		</form>
+		<p class="msg"></p>
+	</div>
 	<script src="js/vendor.js"></script>
 	<script src="js/custom.js"></script>
 </body>
