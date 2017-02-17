@@ -1,13 +1,16 @@
 jQuery(document).ready(function () {
 
-     var flag = false;
+     var flag = false,
+         hoWork =  document.querySelector('.how-work');
     // menu
     $('.link_caret').on('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
 
         $(this).siblings('.menu__sub').slideToggle();
         return false;
     });
+
 
     $('.hamburger').on('click', function (e) {
 
@@ -30,20 +33,23 @@ jQuery(document).ready(function () {
         }
     });
 
-
-
+   if (hoWork) {
 
     var waypoint = new Waypoint({
-        element: $('.how-work'),
+        element: hoWork,
         handler: function(direction) {
             $('.how-work__list .animated').addClass('slideInRight');
         },
         offset: '50%'
     });
 
+    }
+
+
      $(document).on('scroll', function (e) {
 
-        var scrollTop = $(this).scrollTop();
+        var scrollTop = $(this).scrollTop(),
+            headerTop = $('.header-top');
 
         if (scrollTop > 200) {
 
@@ -55,6 +61,12 @@ jQuery(document).ready(function () {
         } else if (scrollTop < 200) {
             $('.to-top').fadeOut(200);
             flag = false;
+        }
+
+        if (scrollTop >= 20) {
+            headerTop.addClass('header-top_fixed');
+        } else {
+            headerTop.removeClass('header-top_fixed');
         }
     });
 
@@ -110,16 +122,16 @@ jQuery(document).ready(function () {
    
 
     // ajax send form
-    $('#order .btn').on('click', function (e) {
+    $('.form__btn').on('click', function (e) {
         e.preventDefault();
 
 
         
-        var win = $('.form-alert'),
-            message = $('.form-alert .msg'),
-            errorMsg = $('.error'),
-            form = document.querySelector('#order'),
-            inputs =  $(this).closest('#order').find('.input'),
+        var win = $('.msg'),
+            // message = $('.form-alert .msg'),
+            form = $(this).closest('.form'),
+            inputs =  form.find('.input'),
+            errorMsg = form.find('.error'),
             valid = validate();
 
 
@@ -143,14 +155,14 @@ jQuery(document).ready(function () {
 
         function showMessage(data) {
             win.html(data);
-            win.css('display','flex');
+            win.addClass('msg_active');
         }
 
         if (valid) {
 
              $.ajax({    
-                url: './contact.php',
-                data: $(this).closest('#order').serialize(),
+                url: form.attr('action'),
+                data: form.serialize(),
                 type: 'POST',
                 success: function(data){
                     showMessage(data);
@@ -160,17 +172,15 @@ jQuery(document).ready(function () {
                 },
                 complete: function(){
                     setTimeout(function () {
-                        // win.fadeOut(500);
-                         $('.form-alert').removeClass('form-alert_active');
+                        win.removeClass('msg_active');
                     }, 3000);
-
-                    form.reset();
+                    form[0].reset();
                 }
             });
          } else {
-            errorMsg.css('display', 'block');
+            errorMsg.css('opacity', '1');
             setTimeout( function () {
-                errorMsg.css('display', 'none');
+                errorMsg.css('opacity', '0');
             }, 5000);
          }
     });

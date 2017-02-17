@@ -6,9 +6,21 @@
 	position: relative;
 
 	&-top {
-		position: absolute;
+		position: fixed;
 		left: 0;
 		right: 0;
+		transition: all .3s;
+		z-index: 12;
+
+		&_fixed {
+			position: fixed;
+			transform: translateY(-40px);
+			box-shadow: 0 0 10px @c-blue;
+
+			.header-nav {
+				background: @c-white;
+			}
+		}
 	}
 
 	&__body {
@@ -107,6 +119,20 @@
 			display: flex;	
 			position: relative;		
 		}
+
+		.menu__item {
+			display: flex;
+			align-items: center;
+			height: 100%;
+
+			
+			&:hover {
+				.menu__sub {
+					display: block;
+
+				}
+			}
+		}
 	}
 }
 
@@ -177,7 +203,7 @@
 				content:"";
 				display: inline-block;
 				position: absolute;
-				top: 50%;
+				top: 45%;
 				right: -15px;
 				margin-top: -3px;
 				border: 5px solid transparent;
@@ -242,6 +268,7 @@
 		display: none;
 		background: rgba(255,255,255,.9);
 		font-size: .8em;
+		z-index: 100;
 	}
 }
 
@@ -291,18 +318,18 @@
 
 	&_active {
 		background: transparent;
-		z-index: 100;
+		// z-index: 100;
 
 		&:after {
 			bottom: 0;
 			transform: rotate(45deg);
-			background: @c-white;
+			// background: @c-white;
 		}
 
 		&:before {
 			top: 0;
 			transform: rotate(-45deg);
-			background: @c-white;
+			// background: @c-white;
 		}
 	}
 }
@@ -327,7 +354,7 @@
 	&__txt {
 		text-align: center;
 		font-size: 1.4em;
-		margin-top: 0;
+		margin: 0;
 
 		span {
 			font-weight: 600;
@@ -402,6 +429,7 @@
 	align-items: center;
 	transform: scale(0);
 	transition: all .4s;
+	z-index: 11;
 
 	nav {
 		max-width: 80%;
@@ -410,6 +438,7 @@
 	.link_dark {
 		color: @c-white;
 		font-size: 1.5em;
+		display: inline-block;
 
 		&:before {
 			background: @c-white;
@@ -423,6 +452,7 @@
 	.menu__item {
 		position: static;
 		transition: all .3s;
+		text-align: center;
 	}
 
 	.menu__sub {
@@ -442,5 +472,24 @@
 .error {
 	color: rgba(255,0,0,.7);
 	text-align: center;
-	display: none;
+	opacity: 0;
+	margin: 0;
+}
+
+.noindex {
+	.header {
+		height: auto;
+
+		&__body {
+			height: auto;
+
+			.form {
+				display: none;
+			}
+		}
+	}
+
+	.filter {
+		min-height: auto;
+	}
 }
